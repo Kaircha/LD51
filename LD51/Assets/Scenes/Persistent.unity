@@ -689,8 +689,7 @@ MonoBehaviour:
   AudioMixerGroup: {fileID: 24300002, guid: 0c8c67d492582264592aa346f9f532b3, type: 2}
   Active: {fileID: 1656198146}
   Inactive: {fileID: 1656198145}
-  Music:
-  - {fileID: 0}
+  Timeframe: 0.1
 --- !u!82 &1656198145
 AudioSource:
   m_ObjectHideFlags: 0

@@ -28,20 +28,32 @@ public class Movement : MonoBehaviour {
       }
       Direction = Vector2Int.zero;
       while (IsBeat) {
-        Vector2Int direction = new(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
+        Vector2Int direction = new(Mathf.RoundToInt(Input.GetAxisRaw("Horizontal")), Mathf.RoundToInt(Input.GetAxisRaw("Vertical")));
         if (direction != Vector2Int.zero) Direction = direction;
         yield return null;
       }
     }
   }
 
-  public void BeatStart() {
+  public void MoveInDirection(Vector2Int direction){
+    Vector3Int cell = Grid.WorldToCell((Vector2)transform.position) + (Vector3Int)direction;
+    transform.position = Grid.CellToWorld(cell) + new Vector3(0, .17f, 0);
+  }
+
+  public void BeatStart(){
     Renderer.color = Color.red;
     IsBeat = true;
   }
 
   public void BeatStop() {
-    Renderer.color = Direction == Vector2Int.zero ? Color.white : Color.green;
+
+    if(Direction == Vector2Int.zero){
+      Renderer.color = Color.white;
+    }
+    else{
+      MoveInDirection(Direction);
+      Renderer.color = Color.green;
+    }
     IsBeat = false;
   }
 }
