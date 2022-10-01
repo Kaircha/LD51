@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using System;
 
 /// <summary>
 /// The AudioManager requires both Singleton and DataManager scripts to function. <br></br> <br></br>
@@ -19,14 +20,15 @@ public class AudioManager : Singleton<AudioManager> {
   public AudioSource Active;
   public AudioSource Inactive;
   public const float CrossfadeDuration = 0.5f;
-  public List<Music> Music;
+  public float Timeframe = 0.6f;
+
+  public void BeatStart() => OnBeatStart?.Invoke();
+  public event Action OnBeatStart;
+  public void BeatStop() => OnBeatStop?.Invoke();
+  public event Action OnBeatStop;
 
   // Contains all audio channels in the AudioMixerGroup
   public static readonly string[] Channels = { "MasterVolume", "MusicVolume", "SFXVolume" };
-
-  //private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
-  //private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
-  //private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => PlayMusic(scene.name);
 
   private void Start() {
     foreach (string channel in Channels) {
@@ -43,9 +45,8 @@ public class AudioManager : Singleton<AudioManager> {
     AudioMixerGroup.audioMixer.SetFloat(channel, Mathf.Log10(value) * 20);
   }
 
-  public void PlayMusic(string name, bool doCrossfade = true) => PlayMusic(Music.FirstOrDefault(x => x.name == name) ?? new Music(), doCrossfade);
-  public void PlayMusic(Music music, bool doCrossfade = true) => PlayMusic(music.start, music.loop, doCrossfade);
-  public void PlayMusic(AudioClip start, AudioClip loop, bool doCrossfade = true) {
+  public void PlayLoopMusic(LoopMusic music, bool doCrossfade = true) => PlayLoopMusic(music.Start, music.Loop, doCrossfade);
+  public void PlayLoopMusic(AudioClip start, AudioClip loop, bool doCrossfade = true) {
     StopAllCoroutines();
     
     Inactive.clip = loop;
@@ -58,16 +59,33 @@ public class AudioManager : Singleton<AudioManager> {
     if (doCrossfade) Crossfade();
     else Hardswap();
   }
-  public void PlayMusicOneShot(AudioClip clip, bool doCrossfade = true) {
+
+  public void PlayBeatMusic(BeatMusic music) {
+    Inactive.clip = music.Track;
+    Inactive.Play();
+    Hardswap();
+    if (BeatCoroutine != null) StopCoroutine(BeatCoroutine);
+    BeatCoroutine = StartCoroutine(BeatRoutine(music.Beats));
+  }
+
+  private Coroutine BeatCoroutine;
+  public IEnumerator BeatRoutine(List<float> beats) {
+    float time = 0f;
+    for (int i = 0; i < beats.Count; i++) {
+      yield return new WaitForSeconds(beats[i] - time - Timeframe);
+      BeatStart();
+      yield return new WaitForSeconds(Timeframe);
+      BeatStop();
+      time = beats[i] + Timeframe;
+    }
+  }
+  
+  public void PlayOneShot(AudioClip clip, bool doCrossfade = true) {
     Inactive.clip = null;
     Inactive.PlayOneShot(clip);
 
     if (doCrossfade) Crossfade();
     else Hardswap();
-  }
-  public void PlayMusicSequential(AudioClip[] clips, bool doCrossfade = true) {
-    StopAllCoroutines();
-    StartCoroutine(SequentialMusicRoutine(clips, doCrossfade));
   }
 
   private void Crossfade(float duration = CrossfadeDuration) {
@@ -119,23 +137,4 @@ public class AudioManager : Singleton<AudioManager> {
     audio.Stop();
     audio.clip = null;
   }
-
-  private IEnumerator SequentialMusicRoutine(AudioClip[] clips, bool doCrossfade) {
-    foreach (AudioClip clip in clips) {
-      Inactive.clip = clip;
-      Inactive.Play();
-
-      if (doCrossfade) Crossfade();
-      else Hardswap();
-
-      yield return new WaitForSecondsRealtime(clip.length);
-    }
-  }
-}
-
-[System.Serializable]
-public class Music {
-  public string name;
-  public AudioClip start;
-  public AudioClip loop;
 }
