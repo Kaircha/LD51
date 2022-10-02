@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : Movement {
   public override bool TryGetDirection(out Vector3Int dir) {
-    dir = new(Mathf.RoundToInt(Input.GetAxisRaw("Horizontal")), Mathf.RoundToInt(Input.GetAxisRaw("Vertical")));
+    float horizontal = -Input.GetAxisRaw("Horizontal");
+    float vertical = Input.GetAxisRaw("Vertical");
+    dir = new(Mathf.RoundToInt(vertical), Mathf.RoundToInt(horizontal));
     return dir != Vector3Int.zero;
   }
 }
