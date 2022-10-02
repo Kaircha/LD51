@@ -11,8 +11,6 @@ public class GameManager : Singleton<GameManager> {
   public void Interval() => OnInterval?.Invoke();
   public event Action OnInterval;
 
-  public BeatMusic Test;
-
   public void UpdateScore() => ScoreText.text = Score.ToString();
 
   public void Start() {
@@ -25,11 +23,6 @@ public class GameManager : Singleton<GameManager> {
     yield return new WaitForSeconds(1f);
 
     while (true) {
-      // Temporary!
-      AudioManager.Instance.PlayBeatMusic(Test);
-      Score++;
-
-
       Interval();
       yield return new WaitForSeconds(Duration);
     }
