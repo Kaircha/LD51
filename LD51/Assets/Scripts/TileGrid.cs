@@ -32,10 +32,17 @@ public class TileGrid : MonoBehaviour {
         tile.transform.position = Grid.CellToWorld(new(x, y));
         tile.Position = new(x, y);
         tile.name = $"Tile [{x}, {y}]";
-        Color color = Color.HSVToRGB(Random.value, 0.5f, 1f);
-        tile.Renderer.color = color;
-        tile.Light.color = color;
-        tile.Light.intensity = Random.Range(0.5f, 2f);
+        if (x == 0 || x == Size.x - 1 || y == 0 || y == Size.y - 1) {
+          tile.Renderer.color = Color.HSVToRGB(0f, 0f, 0.4f);
+          tile.Light.enabled = false;
+          tile.IsSpawn = true;
+        } else { 
+          Color color = Color.HSVToRGB(Random.value, 0.5f, 1f);
+          tile.Renderer.color = color;
+          tile.Light.color = color;
+          tile.Light.intensity = Random.Range(0.5f, 2f);
+          tile.IsSpawn = false;
+        }
         Tiles.Add(tile);
       }
     }

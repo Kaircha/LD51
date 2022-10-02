@@ -5,13 +5,16 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour {
   [HideInInspector] public Tile Tile;
+  [HideInInspector] public Movement Movement;
   public int Health, MaxHealth;
 
   public event Action<int> OnHeal;
   public event Action<int> OnHurt;
 
-  public void Init() {
+  public void Init(TileGrid tileGrid) {
     Health = MaxHealth;
+    Movement = GetComponent<Movement>();
+    Movement.TileGrid = tileGrid;
   }
 
   public void EnterTile(Tile tile) {
