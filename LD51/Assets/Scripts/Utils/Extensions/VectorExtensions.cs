@@ -47,14 +47,17 @@ public static class VectorExtensions {
     new(Mathf.Round(vec.x / 0.1f) * 0.1f,
         Mathf.Round(vec.y / 0.1f) * 0.1f,
         Mathf.Round(vec.z / 0.1f) * 0.1f);
-
   public static Vector2 Snapped(this Vector2 vec) =>
     new(Mathf.Round(vec.x / 0.1f) * 0.1f,
         Mathf.Round(vec.y / 0.1f) * 0.1f);
 
   public static Vector3 Rotated(this Vector3 vec, float degrees)
     => Quaternion.AngleAxis(degrees, Vector3.back) * vec;
-
   public static Vector2 Rotated(this Vector2 vec, float degrees)
     => Quaternion.AngleAxis(degrees, Vector3.back) * vec;
+
+  public static Vector3Int ToInt(this Vector3 vec) =>
+    new(Mathf.RoundToInt(vec.x), Mathf.RoundToInt(vec.y), Mathf.RoundToInt(vec.z));
+  public static Vector2Int ToInt(this Vector2 vec) =>
+  new(Mathf.RoundToInt(vec.x), Mathf.RoundToInt(vec.y));
 }

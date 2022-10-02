@@ -72,11 +72,11 @@ public class AudioManager : Singleton<AudioManager> {
   public IEnumerator BeatRoutine(List<float> beats) {
     float time = 0f;
     for (int i = 0; i < beats.Count; i++) {
-      yield return new WaitForSeconds(beats[i] - time - Timeframe);
+      yield return new WaitForSeconds(beats[i] - time - 0.5f * Timeframe);
       BeatStart();
       yield return new WaitForSeconds(Timeframe);
       BeatStop();
-      time = beats[i] + Timeframe;
+      time = beats[i] + 0.5f * Timeframe;
     }
   }
   
