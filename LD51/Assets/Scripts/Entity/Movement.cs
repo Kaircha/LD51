@@ -7,13 +7,19 @@ using UnityEngine;
 public abstract class Movement : BeatBehaviour {
   public TileGrid TileGrid;
   private Vector3Int Direction;
+  private Vector3Int Position;
   [HideInInspector] public Entity Entity;
+  [HideInInspector] public Tile TileTarget;
 
   private void Awake() => Entity = GetComponent<Entity>();
   public virtual void Start() => StartCoroutine(MovementRoutine());
   public abstract bool TryGetDirection(out Vector3Int dir);
   private IEnumerator MovementRoutine() {
-    Move(Vector3Int.zero);
+    Position = TileGrid.Grid.WorldToCell((Vector2)transform.position);
+    if (TileGrid.TryGetTile(new(Position.x, Position.y), out Tile start)) {
+      Move(start);
+    }
+
     while (true) {
       while (!IsBeat) {
         yield return null;
@@ -21,24 +27,30 @@ public abstract class Movement : BeatBehaviour {
 
       Direction = Vector3Int.zero;
       while (IsBeat) {
-        if (TryGetDirection(out Vector3Int dir)) Direction = dir;
         yield return null;
+        if (TryGetDirection(out Vector3Int dir)) Direction = dir;
+        if (Direction.x != 0 && Direction.y != 0) continue;
+
+        Vector3Int cell = Position + Direction;
+        if (TileGrid.TryGetTile(new(cell.x, cell.y), out Tile tile)) {
+          TileTarget = tile;
+        }
       }
-      Move(Direction);
+
+      if (!Move(TileTarget)) GameManager.Instance.Score -= 3;
     }
   }
 
-  public bool Move(Vector3Int direction) {
-    // Not allowed to move diagonally!
-    if (direction.x != 0 && direction.y != 0) return false;
-
-    Vector3Int cell = TileGrid.Grid.WorldToCell((Vector2)transform.position) + direction;
-    if (TileGrid.TryGetTile(new(cell.x, cell.y), out Tile tile) && !tile.IsOccupied) {
-      Entity.EnterTile(tile);
-      transform.position = tile.transform.position;
+  public bool Move(Tile tile) {
+    if (tile.IsOccupied) {
+      if (tile.Entity == Entity) return false;
+      Entity.Attack(tile.Entity);
       return true;
     } else {
-      return false;
+      Entity.EnterTile(tile);
+      transform.position = tile.transform.position;
+      Position = tile.Position;
+      return true;
     }
   }
 }

@@ -33,7 +33,10 @@ public class SpawnManager : Singleton<SpawnManager> {
       Choices.Add(tile);
     }
 
-    // Display that zombies will spawn here next
+    foreach (Tile choice in Choices) {
+      choice.Light.enabled = true;
+      choice.Light.color = Color.green;
+    }
   }
 
   public void Spawn() {
@@ -41,6 +44,8 @@ public class SpawnManager : Singleton<SpawnManager> {
       Entity zombie = Instantiate(Zombie, transform);
       zombie.transform.position = choice.transform.position;
       zombie.Init(TileGrid);
+      choice.Light.enabled = false;
+      choice.Light.color = Color.white;
     }
   }
 }

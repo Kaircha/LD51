@@ -24,6 +24,7 @@ public abstract class Entity : MonoBehaviour {
     Tile.Entity = this;
   }
 
+  public virtual void Attack(Entity entity) => entity.Hurt();
   public virtual void Heal() => OnHeal?.Invoke(Health);
   public virtual void Hurt() => OnHurt?.Invoke(Health);
 }
