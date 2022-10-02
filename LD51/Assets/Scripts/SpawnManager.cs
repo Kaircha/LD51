@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 public class SpawnManager : Singleton<SpawnManager> {
+  [Min(0)] public int SpawnCount;
   public Entity Zombie;
   public TileGrid TileGrid;
   private List<Tile> Choices = new();
@@ -23,10 +24,9 @@ public class SpawnManager : Singleton<SpawnManager> {
     // Wait before indicators
     yield return new WaitForSeconds(1f);
 
-    int toSpawn = 1;
     List<Tile> options = TileGrid.Tiles.Where(tile => tile.IsSpawn).Where(tile => !tile.IsOccupied).ToList();
     Choices = new();
-    for (int i = 0; i < toSpawn; i++) {
+    for (int i = 0; i < SpawnCount; i++) {
       if (options.Count == 0) yield break;
       Tile tile = options.GetRandom();
       options.Remove(tile);

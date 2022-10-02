@@ -9,6 +9,6 @@ public class EnemyEntity : Entity {
 
   public override void Hurt() {
     base.Hurt();
-    // Die
+    GameManager.Instance.Score += 5;
   }
 }
