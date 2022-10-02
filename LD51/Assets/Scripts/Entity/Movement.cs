@@ -39,29 +39,25 @@ public abstract class Movement : BeatBehaviour {
       }
       if (Entity is EnemyEntity) yield return new WaitUntil(() => SpawnManager.Instance.PlayerMoved == true);
 
+      int increase = Move(TileTarget);
 
-      if (Entity is PlayerEntity){
-        if (!Move(TileTarget))
-          GameManager.Instance.Score -= 5;
-        else
-          GameManager.Instance.Score += 5;
-      }
-      GameManager.Instance.UpdateScore();
+      if (Entity is PlayerEntity)
+        GameManager.Instance.UpdateScore(increase);
 
       if (Entity is PlayerEntity) SpawnManager.Instance.PlayerMoved = true;
     }
   }
 
-  public bool Move(Tile tile) {
+  public int Move(Tile tile) {
     if (tile.IsOccupied) {
-      if (tile.Entity == Entity) return false;
+      if (tile.Entity == Entity) return -5;
       Entity.Attack(tile.Entity);
-      return true;
+      return 5;
     } else {
       Entity.EnterTile(tile);
       transform.position = tile.transform.position;
       Position = tile.Position;
-      return true;
+      return 5;
     }
   }
 }

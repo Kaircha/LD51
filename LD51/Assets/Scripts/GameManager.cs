@@ -6,13 +6,19 @@ using TMPro;
 
 public class GameManager : Singleton<GameManager> {
   [Min(0)] public int Duration;
-  public int Score;
+  private int Score;
   public TextMeshProUGUI ScoreText;
   public void Interval() => OnInterval?.Invoke();
   public event Action OnInterval;
 
-  public void UpdateScore() => ScoreText.text = Score.ToString();
-
+  public void UpdateScore(int val){
+    Score = Mathf.Max(0, Score + val);
+    ScoreText.text = Score.ToString();
+    if (val < 0)
+      ScoreText.color = Color.red;
+    else
+      ScoreText.color = Color.white;
+  }
   public void Start() {
     Score = 0;
     StartCoroutine(IntervalRoutine());
