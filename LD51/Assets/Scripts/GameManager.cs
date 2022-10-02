@@ -2,14 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager> {
   [Min(0)] public int Duration;
   public int Score;
+  public TextMeshProUGUI ScoreText;
   public void Interval() => OnInterval?.Invoke();
   public event Action OnInterval;
 
   public BeatMusic Test;
+
+  public void UpdateScore() => ScoreText.text = Score.ToString();
 
   public void Start() {
     Score = 0;

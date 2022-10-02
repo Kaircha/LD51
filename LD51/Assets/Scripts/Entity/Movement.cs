@@ -39,7 +39,13 @@ public abstract class Movement : BeatBehaviour {
       }
       if (Entity is EnemyEntity) yield return new WaitUntil(() => SpawnManager.Instance.PlayerMoved == true);
 
-      if (!Move(TileTarget)) GameManager.Instance.Score -= 3;
+      if (!Move(TileTarget))
+        GameManager.Instance.Score -= 5;
+      else
+        GameManager.Instance.Score += 5;
+
+      GameManager.Instance.UpdateScore();
+
       if (Entity is PlayerEntity) SpawnManager.Instance.PlayerMoved = true;
     }
   }
