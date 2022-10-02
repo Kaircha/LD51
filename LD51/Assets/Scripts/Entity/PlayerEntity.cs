@@ -18,6 +18,7 @@ public class PlayerEntity : Entity {
 
   [ContextMenu("Hurt")]
   public override void Hurt() {
+
     if (IsAttacking) return;
     Health = Mathf.Max(Health - 1, 0);
     base.Hurt();

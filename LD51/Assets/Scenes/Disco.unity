@@ -425,6 +425,7 @@ MonoBehaviour:
   SpawnCount: 1
   Zombie: {fileID: 2151521242629559024, guid: 008e48b56275b8e4080ad5ff216e9889, type: 3}
   TileGrid: {fileID: 18781034}
+  Player: {fileID: 92730106}
 --- !u!1 &55214403
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 1, z: 0}
@@ -764,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 3, z: 0}
@@ -834,6 +837,7 @@ MonoBehaviour:
   IsBeat: 0
   TileGrid: {fileID: 18781034}
   Entity: {fileID: 0}
+  TileTarget: {fileID: 0}
 --- !u!1 &147228397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 0, z: 0}
@@ -1173,6 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 7, z: 0}
@@ -1345,6 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 4, z: 0}
@@ -1517,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 7, y: 0, z: 0}
@@ -1689,6 +1697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 7, z: 0}
@@ -1861,6 +1870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 5, z: 0}
@@ -2033,6 +2043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 6, z: 0}
@@ -2205,6 +2216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 3, z: 0}
@@ -2377,6 +2389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 2, z: 0}
@@ -2549,6 +2562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 2, y: 8, z: 0}
@@ -2869,6 +2883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 6, z: 0}
@@ -3041,6 +3056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 2, z: 0}
@@ -3213,6 +3229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 3, y: 0, z: 0}
@@ -3385,6 +3402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 7, z: 0}
@@ -3557,6 +3575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 8, z: 0}
@@ -3729,6 +3748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 1, y: 0, z: 0}
@@ -3978,6 +3998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 4, z: 0}
@@ -4150,6 +4171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 5, z: 0}
@@ -4322,6 +4344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 1, z: 0}
@@ -4494,6 +4517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 4, z: 0}
@@ -4666,6 +4690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 3, z: 0}
@@ -4948,6 +4973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 1, z: 0}
@@ -5120,6 +5146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 7, z: 0}
@@ -5292,6 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 2, z: 0}
@@ -5464,6 +5492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 2, z: 0}
@@ -5636,6 +5665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 0, z: 0}
@@ -5808,6 +5838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 5, y: 8, z: 0}
@@ -5980,6 +6011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 3, y: 8, z: 0}
@@ -6229,6 +6261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 6, z: 0}
@@ -6401,6 +6434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 4, z: 0}
@@ -6649,6 +6683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 6, y: 8, z: 0}
@@ -6821,6 +6856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 4, z: 0}
@@ -6993,6 +7029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 4, z: 0}
@@ -7165,6 +7202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 1, z: 0}
@@ -7337,6 +7375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 5, z: 0}
@@ -7509,6 +7548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 1, z: 0}
@@ -7681,6 +7721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 2, y: 0, z: 0}
@@ -7929,6 +7970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 4, y: 8, z: 0}
@@ -8101,6 +8143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 6, z: 0}
@@ -8273,6 +8316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 3, z: 0}
@@ -8309,6 +8353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 8, z: 0}
@@ -8694,6 +8739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 6, y: 0, z: 0}
@@ -8866,6 +8912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 7, z: 0}
@@ -9210,6 +9257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 7, z: 0}
@@ -9382,6 +9430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 5, z: 0}
@@ -9554,6 +9603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 3, z: 0}
@@ -9726,6 +9776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 2, z: 0}
@@ -9898,6 +9949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 7, y: 8, z: 0}
@@ -10070,6 +10122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 4, z: 0}
@@ -10242,6 +10295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 5, z: 0}
@@ -10485,6 +10539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 4, z: 0}
@@ -10657,6 +10712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 5, y: 2, z: 0}
@@ -10829,6 +10885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 3, z: 0}
@@ -11001,6 +11058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 3, z: 0}
@@ -11173,6 +11231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 5, y: 0, z: 0}
@@ -11345,6 +11404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 7, z: 0}
@@ -11517,6 +11577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 6, z: 0}
@@ -11689,6 +11750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 1, z: 0}
@@ -11861,6 +11923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 7, z: 0}
@@ -12117,6 +12180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 2, z: 0}
@@ -12289,6 +12353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 7, y: 2, z: 0}
@@ -12461,6 +12526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 1, z: 0}
@@ -12633,6 +12699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 4, y: 0, z: 0}
@@ -12805,6 +12872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 5, z: 0}
@@ -12977,6 +13045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 6, z: 0}
@@ -13225,6 +13294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 5, z: 0}
@@ -13397,6 +13467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 4, y: 1, z: 0}
@@ -13569,6 +13640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 2, y: 6, z: 0}
@@ -13741,6 +13813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 3, z: 0}
@@ -13913,6 +13986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 2, z: 0}
@@ -14085,6 +14159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 3, y: 5, z: 0}
@@ -14257,6 +14332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 1, y: 8, z: 0}
@@ -14429,6 +14505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 6, z: 0}
@@ -14601,6 +14678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 4, z: 0}
@@ -14773,6 +14851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 1, z: 0}
@@ -14945,6 +15024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 6, y: 5, z: 0}
@@ -15117,6 +15197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 0
   Entity: {fileID: 0}
   Position: {x: 1, y: 6, z: 0}
@@ -15289,6 +15370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 8, y: 3, z: 0}
@@ -15461,6 +15543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54646c2937d02b240961b97d117a36f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBeat: 0
   IsSpawn: 1
   Entity: {fileID: 0}
   Position: {x: 0, y: 7, z: 0}

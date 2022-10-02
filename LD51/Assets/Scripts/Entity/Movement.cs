@@ -27,17 +27,20 @@ public abstract class Movement : BeatBehaviour {
 
       Direction = Vector3Int.zero;
       while (IsBeat) {
+        SpawnManager.Instance.PlayerMoved = false;
         yield return null;
         if (TryGetDirection(out Vector3Int dir)) Direction = dir;
         if (Direction.x != 0 && Direction.y != 0) continue;
 
         Vector3Int cell = Position + Direction;
-        if (TileGrid.TryGetTile(new(cell.x, cell.y), out Tile tile)) {
+        if (TileGrid.TryGetTile(new(cell.x, cell.y), out Tile tile) && !SpawnManager.Instance.Choices.Contains(tile)) {
           TileTarget = tile;
         }
       }
+      if (Entity is EnemyEntity) yield return new WaitUntil(() => SpawnManager.Instance.PlayerMoved == true);
 
       if (!Move(TileTarget)) GameManager.Instance.Score -= 3;
+      if (Entity is PlayerEntity) SpawnManager.Instance.PlayerMoved = true;
     }
   }
 

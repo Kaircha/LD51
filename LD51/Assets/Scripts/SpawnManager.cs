@@ -7,11 +7,15 @@ public class SpawnManager : Singleton<SpawnManager> {
   [Min(0)] public int SpawnCount;
   public Entity Zombie;
   public TileGrid TileGrid;
-  private List<Tile> Choices = new();
+  public List<Tile> Choices = new();
+  public Entity Player;
+
+  public bool PlayerMoved = false;  
 
   private void OnEnable() {
     GameManager.Instance.OnInterval += Spawn;
     GameManager.Instance.OnInterval += Choose;
+    Player.Init(TileGrid);
   }
 
   private void OnDisable() {
